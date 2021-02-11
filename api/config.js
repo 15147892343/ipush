@@ -10,7 +10,7 @@
 //==========================云端环境变量的判断与接收=========================
 
 // ===================== 获取用户设置的TOKEN ===============================
-const TOKEN = process.env.TOKEN || '1'
+const TOKEN = process.env.TOKEN
 
 // ===================== pushPlus设置区域 =================================
 // pushPlus - token
@@ -32,11 +32,11 @@ const CHAT_ID = process.env.CHAT_ID
 
 // ===================== qmsg推送 =================================
 // qmsg - KEY
-const QMSG_KEY = process.env.QMSG_KEY || '5b98cff6f67dcf51baa54d8f6daa6bb9'
+const QMSG_KEY = process.env.QMSG_KEY
 // qmsg - type（send表示推送到qq，group推送到群） 参考：https://qmsg.zendee.cn/api.html
-const QMSG_TYPE = process.env.QMSG_TYPE || 'send'
+const QMSG_TYPE = process.env.QMSG_TYPE
 // qmsg - qq (qq号或者群号，多个用逗号,隔开)
-const QMSG_QQ = process.env.QMSG_QQ || '1320942202'
+const QMSG_QQ = process.env.QMSG_QQ
 //==========================云端环境变量的判断与接收=========================
 
 module.exports = {
