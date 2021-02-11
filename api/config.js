@@ -21,8 +21,14 @@ const PUSH_PLUS_TOPIC = process.env.PUSH_PLUS_TOPIC
 // ===================== 钉钉webhook推送 =================================
 // 钉钉 - token
 const DD_BOT_TOKEN = process.env.DD_BOT_TOKEN
-// 钉钉 - topic
+// 钉钉 - 密钥
 const DD_BOT_SECRET = process.env.DD_BOT_SECRET
+
+// ===================== tg机器人推送 =================================
+// tg - TOKEN
+const TG_BOT_TOKEN = process.env.TG_BOT_TOKEN
+// tg - userID
+const CHAT_ID = process.env.CHAT_ID
 
 //==========================云端环境变量的判断与接收=========================
 
@@ -33,5 +39,8 @@ module.exports = {
   PUSH_PLUS_TOPIC,
   // 钉钉
   DD_BOT_TOKEN,
-  DD_BOT_SECRET
+  DD_BOT_SECRET,
+  // TG机器人
+  TG_BOT_TOKEN,
+  CHAT_ID
 }

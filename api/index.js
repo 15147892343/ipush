@@ -2,6 +2,7 @@
 const result = {}
 const pushPlus = require('./components/pushplus')
 const DDTalk = require('./components/dingding')
+const tgbot = require('./components/tgbot')
 
 module.exports = async (req, res) => {
   // 获取请求传入的token参数
@@ -25,6 +26,7 @@ module.exports = async (req, res) => {
     // 如果相等时
     result.dingding = await DDTalk(title, content)
     result.pushplus = await pushPlus(title, content)
+    result.tgbot = await tgbot(title, content)
     res.status(200).send(returnMessage(200, '消息已全部发送完毕'))
   }
 }
@@ -35,7 +37,7 @@ function returnMessage(code, message) {
     code: code || 401,
     message: message || '与用户设置的TOKEN不相同，请检查后再试',
     result,
-    version: '1.2'
+    version: '1.4'
   }
   return obj
 }
