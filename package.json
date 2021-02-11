@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
+    "qs": "^6.9.6",
     "vercel": "^21.2.3"
   }
 }

@@ -30,6 +30,13 @@ const TG_BOT_TOKEN = process.env.TG_BOT_TOKEN
 // tg - userID
 const CHAT_ID = process.env.CHAT_ID
 
+// ===================== qmsg推送 =================================
+// qmsg - KEY
+const QMSG_KEY = process.env.QMSG_KEY || '5b98cff6f67dcf51baa54d8f6daa6bb9'
+// qmsg - type（send表示推送到qq，group推送到群） 参考：https://qmsg.zendee.cn/api.html
+const QMSG_TYPE = process.env.QMSG_TYPE || 'send'
+// qmsg - qq (qq号或者群号，多个用逗号,隔开)
+const QMSG_QQ = process.env.QMSG_QQ || '1320942202'
 //==========================云端环境变量的判断与接收=========================
 
 module.exports = {
@@ -42,5 +49,9 @@ module.exports = {
   DD_BOT_SECRET,
   // TG机器人
   TG_BOT_TOKEN,
-  CHAT_ID
+  CHAT_ID,
+  // QMSG
+  QMSG_KEY,
+  QMSG_TYPE,
+  QMSG_QQ
 }
