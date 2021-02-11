@@ -1,6 +1,7 @@
 // 所有发送数据的返回结果
 const result = {}
 const pushPlus = require('./components/pushplus')
+const DDTalk = require('./components/dingding')
 
 module.exports = async (req, res) => {
   // 获取请求传入的token参数
@@ -10,6 +11,7 @@ module.exports = async (req, res) => {
   } else {
     requestData = req.body || {}
   }
+  const { TOKEN } = require('./config')
   const { token, title, content } = requestData
   if (TOKEN !== token) {
     res
@@ -21,6 +23,7 @@ module.exports = async (req, res) => {
   }
   if (title && content) {
     // 如果相等时
+    result.dingding = await DDTalk(title, content)
     result.pushplus = await pushPlus(title, content)
     res.status(200).send(returnMessage(200, '消息已全部发送完毕'))
   }
@@ -31,7 +34,8 @@ function returnMessage(code, message) {
   const obj = {
     code: code || 401,
     message: message || '与用户设置的TOKEN不相同，请检查后再试',
-    result
+    result,
+    version: '1.2'
   }
   return obj
 }

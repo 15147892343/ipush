@@ -24,6 +24,6 @@ module.exports = async function pushPlus(title, content) {
     const res = await axios.post(url, { ...sendObj })
     return res.data
   } else {
-    return '没有设置PUSH_PLUS_TOKEN'
+    return '没有设置PUSH_PLUS_TOKEN故没有进行pushPlus的推送！'
   }
 }
